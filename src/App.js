@@ -1,7 +1,5 @@
 function App() {
-  return (
-    <div>Welcome to Factive</div>
-  );
+  return <div>Welcome to Factive</div>;
 }
 
 export default App;
