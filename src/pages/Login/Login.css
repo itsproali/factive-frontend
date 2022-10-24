@@ -1,0 +1,60 @@
+/* Common */
+.input-field {
+    all: unset;
+    display: block;
+    width: 100%;
+    padding: 0.75rem 1rem;
+    padding-right: 1.75rem;
+    border-radius: 0.5rem;
+    border: 1px solid lightgray;
+    transition: all 0.4s ease;
+}
+
+.input-field:focus,
+.register_input:focus,
+.dropdown:focus {
+    border: 1px solid #1877f2;
+}
+
+/* Register */
+.register {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    transition: all .5s linear;
+}
+
+.register_input {
+    all: unset;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    padding-right: 1.75rem;
+    border-radius: 0.35rem;
+    border: 1px solid gray;
+    background-color: rgb(240, 240, 240);
+    transition: all 0.4s ease;
+}
+
+.dropdown,
+.gender {
+    padding: 0.35rem .5rem;
+    outline: none;
+    border: 1px solid gray;
+    border-radius: 0.25rem;
+}
+
+.gender {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Register & Login Error */
+.error-field,
+.error-field:focus {
+    border: 1px solid red;
+}
