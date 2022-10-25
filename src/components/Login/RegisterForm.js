@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
-import Cookies from "js-cookie";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
@@ -44,14 +43,13 @@ const RegisterForm = ({ setIsSignUp }) => {
     setLoading(true);
     try {
       const { data } = await axios.post(
-        "http://localhost:5000/register",
+        `${process.env.REACT_APP_SERVER}/register`,
         values
       );
       const { success, message, ...others } = data;
       if (success) {
         navigate("/");
         dispatch({ type: "LOGIN", payload: others });
-        Cookies.set("user", JSON.stringify(others));
       }
     } catch (error) {
       setErr(error?.response?.data);
@@ -89,8 +87,8 @@ const RegisterForm = ({ setIsSignUp }) => {
       <div className="register shadow-lg w-[95%] sm:w-[30rem]">
         <div className="flex justify-between items-start gap-4 border-b pb-4">
           <div className="text-left">
-            <h1 className="text-4xl font-bold text-black">Sign Up</h1>
-            <span className="text-gray-400">It's quick and easy</span>
+            <h1 className="text-4xl font-bold text-color-primary dark:text-dark-color-primary">Sign Up</h1>
+            <span className="text-color-secondary dark:text-dark-color-secondary">It's quick and easy</span>
           </div>
           <button className="font-bold" onClick={() => setIsSignUp(false)}>
             <i className="exit_icon" />
@@ -198,7 +196,7 @@ const RegisterForm = ({ setIsSignUp }) => {
               {/* Date of Birth */}
               <div className="">
                 <p
-                  className="text-sm font-semibold text-gray-500 cursor-pointer"
+                  className="text-sm font-semibold text-color-secondary cursor-pointer"
                   title="At least 10 years old needed..!"
                 >
                   Date of Birth <i className="info_icon scale-90"></i>
@@ -250,7 +248,7 @@ const RegisterForm = ({ setIsSignUp }) => {
                 <div className="flex justify-between">
                   <p
                     className={`text-sm font-semibold cursor-pointer  ${
-                      errors.gender ? "text-error" : "text-gray-500"
+                      errors.gender ? "text-error" : "text-color-secondary"
                     }`}
                     title="Choose your gender"
                   >
@@ -290,17 +288,17 @@ const RegisterForm = ({ setIsSignUp }) => {
                 <p className="mb-3">
                   People who use our service may have uploaded your contact
                   information to Factive.{" "}
-                  <span className="text-primary cursor-pointer hover:underline">
+                  <span className="text-blue-color cursor-pointer hover:underline">
                     Learn more.
                   </span>
                 </p>
                 <p>
                   By clicking Sign Up, you agree to our{" "}
-                  <span className="text-primary cursor-pointer hover:underline">
+                  <span className="text-blue-color cursor-pointer hover:underline">
                     Terms
                   </span>
                   ,{" "}
-                  <span className="text-primary cursor-pointer hover:underline">
+                  <span className="text-blue-color cursor-pointer hover:underline">
                     Privacy Policy{" "}
                   </span>
                   and Cookies Policy. You may receive SMS notifications from us

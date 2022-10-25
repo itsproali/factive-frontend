@@ -1,15 +1,15 @@
 import React, { useState } from "react";
 import LoginForm from "../../components/Login/LoginForm";
 import RegisterForm from "../../components/Login/RegisterForm";
-import { Helmet } from 'react-helmet-async';
+import { Helmet } from "react-helmet-async";
 import "../../styles/icons/icons.css";
 import "./Login.css";
 
 const Login = () => {
-  const [isSignUp, setIsSignUp] = useState(false)
+  const [isSignUp, setIsSignUp] = useState(false);
 
   return (
-    <div className="bg-lightGray">
+    <div className="bg-secondary dark:bg-dark-secondary">
       <Helmet>
         <title>Factive - Log In or Sign Up to continue</title>
       </Helmet>
@@ -28,7 +28,7 @@ const Login = () => {
           {/* Login Form */}
           <LoginForm setIsSignUp={setIsSignUp} />
           {/* Register Form */}
-          {isSignUp && <RegisterForm setIsSignUp={setIsSignUp}/>}
+          {isSignUp && <RegisterForm setIsSignUp={setIsSignUp} />}
         </div>
       </div>
     </div>

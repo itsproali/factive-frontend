@@ -1,6 +1,5 @@
 import axios from "axios";
 import { Field, Form, Formik } from "formik";
-import Cookies from "js-cookie";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
 import { Link, useNavigate } from "react-router-dom";
@@ -26,12 +25,15 @@ const LoginForm = ({ setIsSignUp }) => {
   const handleLogin = async (values) => {
     setLoading(true);
     try {
-      const { data } = await axios.post("http://localhost:5000/login", values);
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_SERVER}/login`,
+        values
+      );
       const { success, message, ...others } = data;
       if (success) {
         navigate("/");
         dispatch({ type: "LOGIN", payload: others });
-        Cookies.set("user", JSON.stringify(others));
+        
       }
     } catch (error) {
       console.log(error?.response?.data?.message);
@@ -45,7 +47,7 @@ const LoginForm = ({ setIsSignUp }) => {
   }
 
   return (
-    <div className="p-6 bg-white shadow-lg rounded-xl w-full sm:w-96">
+    <div className="p-6 bg-primary dark:bg-dark-primary shadow-lg rounded-xl w-full sm:w-96">
       {/* Formik Form */}
       <Formik
         initialValues={{
@@ -106,11 +108,11 @@ const LoginForm = ({ setIsSignUp }) => {
         )}
       </Formik>
       <div className="text-center my-3">
-        <Link to="/" className="text-primary hover:underline">
+        <Link to="/" className="text-blue-color hover:underline">
           Forgotten Password?
         </Link>
       </div>
-      <div className="h-[1.75px] w-full bg-lightGray"></div>
+      <div className="h-[1.75px] w-full bg-divider-color"></div>
       <div className="text-center">
         <GreenButton className="px-6 mt-6" onClick={() => setIsSignUp(true)}>
           Create New Account

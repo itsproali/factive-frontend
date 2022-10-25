@@ -1,0 +1,19 @@
+/* ====== Dark Theme ====== */
+.dark {
+    --primary: #18191a;
+    --secondary: #242526;
+    --third: #3a3b3c;
+    --forth: #2a2b2c;
+    --color-primary: #f0f2f5;
+    --color-secondary: #b0b3b8;
+}
+
+.dark .circle span:nth-child(1) {
+    filter: invert(100%) !important;
+}
+
+.dark .blur_overlay {
+    background-color: rgb(255, 255, 255) !important;
+}
+
+/* ====== Dark Theme ====== */
