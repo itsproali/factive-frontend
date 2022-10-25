@@ -8,7 +8,7 @@
     --color-secondary: #b0b3b8;
 }
 
-.dark .circle span:nth-child(1) {
+.dark .circle span:nth-child(1), .dark .small_circle i {
     filter: invert(100%) !important;
 }
 

@@ -16,8 +16,9 @@ import {
   Search,
 } from "../../svg";
 import "./Header.css";
-import ProfileMenu from "./ProfileMenu";
+import CreateMenu from "./CreateMenu";
 import SearchMenu from "./SearchMenu";
+import UserMenu from "./UserMenu";
 
 const Header = () => {
   const [active, setActive] = useState("Home");
@@ -25,7 +26,8 @@ const Header = () => {
   const secondaryColor = "#65676b";
   const blueColor = "#1876f2";
   const [showSearchMenu, setShowSearchMenu] = useState(false);
-  const [showProfileMenu, setShowProfileMenu] = useState(false);
+  const [showUserMenu, setShowUserMenu] = useState(false);
+  const [showCreateMenu, setShowCreateMenu] = useState(false);
 
   const navigations = [
     {
@@ -107,9 +109,12 @@ const Header = () => {
 
       {/* Header Right */}
       <div className="flex items-center gap-2 relative">
-        <button className="circle">
+        <button
+          className={`circle ${showCreateMenu && "active_circle"}`}
+          onClick={() => setShowCreateMenu(true)}
+        >
           <span>
-            <Plus />
+            <Plus color={showCreateMenu && blueColor} />
           </span>
         </button>
         <button className="circle">
@@ -122,15 +127,16 @@ const Header = () => {
             <Notifications />
           </span>
         </button>
-        <button className="" onClick={() => setShowProfileMenu(true)}>
+        <button className="" onClick={() => setShowUserMenu(true)}>
           <img
             src={picture}
             alt="user"
             className="w-full h-full circle profile_circle"
           />
         </button>
-        {showProfileMenu && (
-          <ProfileMenu setShowProfileMenu={setShowProfileMenu} />
+        {showCreateMenu && <CreateMenu setShowCreateMenu={setShowCreateMenu} />}
+        {showUserMenu && (
+          <UserMenu setShowUserMenu={setShowUserMenu} />
         )}
       </div>
     </header>

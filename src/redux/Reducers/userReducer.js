@@ -7,6 +7,9 @@ const userReducer = (state = initialState, action) => {
     case "LOGIN":
       Cookies.set("user", JSON.stringify(action.payload));
       return action.payload;
+    case "LOGOUT":
+      Cookies.remove("user");
+      return {};
 
     default:
       return state;

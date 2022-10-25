@@ -86,3 +86,15 @@ input:-webkit-autofill:enabled {
 input[data-autocompleted] {
   background-color: transparent !important;
 }
+
+/* -------- Scrollbar ------- */
+.scrollbar::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scrollbar::-webkit-scrollbar-thumb {
+  background-color: #aeaeafa1;
+  border-radius: 5px;
+}
+
+/* -------- Scrollbar ------- */
