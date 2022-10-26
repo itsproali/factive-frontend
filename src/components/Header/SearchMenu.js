@@ -1,7 +1,7 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight } from "../../svg";
-import useClickOutside from "../../utils/useClickOutside";
+import useClickOutside from "../../hooks/useClickOutside";
 
 const SearchMenu = ({ secondaryColor, setShowSearchMenu }) => {
   const menu = useRef(null);
@@ -10,7 +10,7 @@ const SearchMenu = ({ secondaryColor, setShowSearchMenu }) => {
   });
   return (
     <div
-      className="h-96 shadow-lg bg-primary dark:bg-dark-primary rounded-lg absolute top-0 left-0 py-2 px-3 overflow-auto scrollbar"
+      className="h-96 shadow-lg bg-primary dark:bg-dark-secondary rounded-lg absolute top-0 left-0 py-2 px-3 overflow-auto scrollbar"
       ref={menu}
     >
       <div className="flex items-center justify-between gap-2">

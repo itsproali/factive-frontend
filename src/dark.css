@@ -8,12 +8,25 @@
     --color-secondary: #b0b3b8;
 }
 
-.dark .circle span:nth-child(1), .dark .small_circle i {
-    filter: invert(100%) !important;
+.dark .app {
+    background-color: var(--primary) !important;
 }
 
-.dark .blur_overlay {
-    background-color: rgb(255, 255, 255) !important;
+.dark .circle span:nth-child(1),
+.dark .small_circle i {
+    filter: invert(90%) !important;
+}
+
+.dark .active_circle {
+    background-color: var(--medium-blue);
+}
+
+.dark .active_circle span:nth-child(1) {
+    filter: none !important;
+}
+
+.dark .loading-wrapper {
+    background-color: rgba(250, 250, 250, 0.5);
 }
 
 /* ====== Dark Theme ====== */

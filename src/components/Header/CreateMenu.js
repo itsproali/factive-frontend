@@ -1,6 +1,6 @@
 import React, { useRef } from "react";
 import { Link } from "react-router-dom";
-import useClickOutside from "../../utils/useClickOutside";
+import useClickOutside from "../../hooks/useClickOutside";
 const CreateMenu = ({ secondaryColor, setShowCreateMenu }) => {
   const menu = useRef(null);
   useClickOutside(menu, () => {
@@ -61,7 +61,7 @@ const CreateMenu = ({ secondaryColor, setShowCreateMenu }) => {
 
   return (
     <div
-      className="w-80 max-h-[90vh] shadow-lg bg-primary dark:bg-dark-primary rounded-lg absolute top-[50px] right-0 py-3 px-2 overflow-auto scrollbar"
+      className="w-80 max-h-[90vh] shadow-lg bg-primary dark:bg-dark-secondary rounded-lg absolute top-[50px] right-0 py-3 px-2 overflow-auto scrollbar"
       ref={menu}
     >
       <h2 className="text-2xl font-bold text-color-primary dark:text-dark-color-primary">
@@ -73,7 +73,7 @@ const CreateMenu = ({ secondaryColor, setShowCreateMenu }) => {
           <Link
             key={option.title}
             to={option.path}
-            className="flex items-start gap-3 justify-start p-2 rounded-lg hover:bg-secondary dark:hover:bg-dark-secondary"
+            className="flex items-start gap-3 justify-start p-2 rounded-lg hover:bg-secondary dark:hover:bg-dark-third"
           >
             <div className="circle small_circle">
               <i className={option.icon}></i>
@@ -89,13 +89,13 @@ const CreateMenu = ({ secondaryColor, setShowCreateMenu }) => {
           </Link>
         ))}
 
-        <div className="w-full h-[1px] bg-secondary dark:bg-dark-secondary my-4"></div>
+        <div className="w-full h-[1px] bg-secondary dark:bg-dark-third my-4"></div>
 
         {menuOptions?.slice(3, 9)?.map((option) => (
           <Link
             key={option.title}
             to={option.path}
-            className="flex items-start gap-3 justify-start p-2 rounded-lg hover:bg-secondary dark:hover:bg-dark-secondary"
+            className="flex items-start gap-3 justify-start p-2 rounded-lg hover:bg-secondary dark:hover:bg-dark-third"
           >
             <div className="circle small_circle">
               <i className={option.icon}></i>

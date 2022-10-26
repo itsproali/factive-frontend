@@ -2,32 +2,36 @@ import React, { useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import {
-  Home,
-  HomeActive,
   Friends,
   FriendsActive,
-  Watch,
   Gaming,
+  Home,
+  HomeActive,
   Logo,
   Market,
   Messenger,
   Notifications,
   Plus,
   Search,
+  Watch,
 } from "../../svg";
-import "./Header.css";
 import CreateMenu from "./CreateMenu";
+import "./Header.css";
+import MessageMenu from "./MessageMenu";
+import NotificationMenu from "./NotificationMenu";
 import SearchMenu from "./SearchMenu";
 import UserMenu from "./UserMenu";
 
 const Header = () => {
   const [active, setActive] = useState("Home");
-  const { picture } = useSelector((state) => state?.user);
+  const user = useSelector((state) => state?.user);
   const secondaryColor = "#65676b";
   const blueColor = "#1876f2";
   const [showSearchMenu, setShowSearchMenu] = useState(false);
   const [showUserMenu, setShowUserMenu] = useState(false);
   const [showCreateMenu, setShowCreateMenu] = useState(false);
+  const [showMessageMenu, setShowMessageMenu] = useState(false);
+  const [showNotificationMenu, setShowNotificationMenu] = useState(false);
 
   const navigations = [
     {
@@ -62,7 +66,7 @@ const Header = () => {
     },
   ];
   return (
-    <header className="bg-primary dark:bg-dark-primary h-[56px] flex items-center justify-between gap-4 fixed top-0 left-0 z-50 px-2 lg:px-4 w-full drop-shadow text-color-primary dark:text-dark-color-primary">
+    <header className="bg-primary dark:bg-dark-secondary h-[56px] flex items-center justify-between gap-4 fixed top-0 left-0 z-50 px-2 lg:px-4 w-full drop-shadow text-color-primary dark:text-dark-color-primary">
       {/* Header Left */}
       <div className="flex items-center gap-2 relative">
         <Link to="/" onClick={() => setActive("Home")}>
@@ -114,30 +118,40 @@ const Header = () => {
           onClick={() => setShowCreateMenu(true)}
         >
           <span>
-            <Plus color={showCreateMenu && blueColor} />
+            <Plus color={showCreateMenu ? blueColor : secondaryColor} />
           </span>
         </button>
-        <button className="circle">
+        <button
+          className={`circle header_hidden ${showMessageMenu && "active_circle"}`}
+          onClick={() => setShowMessageMenu(true)}
+        >
           <span>
-            <Messenger />
+            <Messenger color={showMessageMenu ? blueColor : secondaryColor} />
           </span>
         </button>
-        <button className="circle">
+        <button
+          className={`circle header_hidden ${showNotificationMenu && "active_circle"}`}
+          onClick={() => setShowNotificationMenu(true)}
+        >
           <span>
-            <Notifications />
+            <Notifications color={showNotificationMenu ? blueColor : secondaryColor} />
           </span>
         </button>
         <button className="" onClick={() => setShowUserMenu(true)}>
           <img
-            src={picture}
+            src={user?.picture}
             alt="user"
             className="w-full h-full circle profile_circle"
           />
         </button>
         {showCreateMenu && <CreateMenu setShowCreateMenu={setShowCreateMenu} />}
-        {showUserMenu && (
-          <UserMenu setShowUserMenu={setShowUserMenu} />
+        {showMessageMenu && (
+          <MessageMenu setShowMessageMenu={setShowMessageMenu} />
         )}
+        {showNotificationMenu && (
+          <NotificationMenu setShowNotificationMenu={setShowNotificationMenu} />
+        )}
+        {showUserMenu && <UserMenu setShowUserMenu={setShowUserMenu} />}
       </div>
     </header>
   );
