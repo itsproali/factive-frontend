@@ -112,7 +112,7 @@ const LoginForm = ({ setIsSignUp }) => {
           Forgotten Password?
         </Link>
       </div>
-      <div className="h-[1.75px] w-full bg-divider-color"></div>
+      <div className="h-[1.75px] w-full bg-secondary dark:bg-dark-secondary"></div>
       <div className="text-center">
         <GreenButton className="px-6 mt-6" onClick={() => setIsSignUp(true)}>
           Create New Account

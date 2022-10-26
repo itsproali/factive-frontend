@@ -12,6 +12,8 @@ import Login from "./pages/Login/Login";
 import Market from "./pages/Market/Market";
 import Profile from "./pages/Profile/Profile";
 import Watch from "./pages/Watch/Watch";
+import LoggedIn from "./utils/LoggedIn";
+import RequireAuth from "./utils/RequireAuth";
 
 function App() {
   // Make Header visible or not
@@ -19,22 +21,28 @@ function App() {
   const isHidden = ["/login", "/activate"].includes(location.pathname);
 
   // Theme
-  const theme = useSelector((state) => state.theme);
+  const darkTheme = useSelector((state) => state.darkTheme);
   return (
-    <div className={`app ${theme && "dark"}`}>
-      {isHidden || <Header />}
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/login" element={<Login />} />
-        <Route path="/activate/:token" element={<AccountActivate />} />
-        <Route path="/profile" element={<Profile />} />
-        <Route path="/friends" element={<Friends />} />
-        <Route path="/watch" element={<Watch />} />
-        <Route path="/market" element={<Market />} />
-        <Route path="/gaming" element={<Gaming />} />
-        <Route path="/loading" element={<Loading />} />
-      </Routes>
-      <Footer />
+    <div className={`${darkTheme && "dark"}`}>
+      <div className="app">
+        {isHidden || <Header />}
+        <Routes>
+          <Route element={<LoggedIn />}>
+            <Route path="/login" element={<Login />} />
+          </Route>
+          <Route element={<RequireAuth />}>
+            <Route path="/" element={<Home />} />
+            <Route path="/activate/:token" element={<AccountActivate />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route path="/friends" element={<Friends />} />
+            <Route path="/watch" element={<Watch />} />
+            <Route path="/market" element={<Market />} />
+            <Route path="/gaming" element={<Gaming />} />
+            <Route path="/loading" element={<Loading />} />
+          </Route>
+        </Routes>
+        <Footer />
+      </div>
     </div>
   );
 }

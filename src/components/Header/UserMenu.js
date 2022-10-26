@@ -1,12 +1,12 @@
 import React, { useRef } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
-import useClickOutside from "../../utils/useClickOutside";
+import useClickOutside from "../../hooks/useClickOutside";
 
 const UserMenu = ({ setShowUserMenu }) => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
-  const { user, theme } = useSelector((state) => state);
+  const { user, darkTheme } = useSelector((state) => state);
   const menu = useRef(null);
   useClickOutside(menu, () => {
     setShowUserMenu(false);
@@ -40,12 +40,12 @@ const UserMenu = ({ setShowUserMenu }) => {
 
   return (
     <div
-      className="h-[75vh] shadow-lg bg-primary dark:bg-dark-primary rounded-lg absolute top-[50px] right-0 p-3 overflow-y-auto scrollbar"
+      className="h-[30.5rem] w-72 shadow-lg bg-primary dark:bg-dark-secondary rounded-lg absolute top-[50px] right-0 p-3 overflow-auto scrollbar"
       ref={menu}
     >
       <Link
         to="/"
-        className="flex items-center gap-4 hover:dark:bg-dark-third rounded my-2 p-2"
+        className="flex items-center gap-4 darK:hover:bg-dark-third rounded my-2 p-2"
       >
         <img
           src={user?.picture}
@@ -60,14 +60,14 @@ const UserMenu = ({ setShowUserMenu }) => {
         </div>
       </Link>
 
-      <div className="h-[1px] w-full bg-secondary dark:bg-dark-secondary my-3"></div>
+      <div className="h-[1px] w-full bg-secondary dark:bg-dark-third my-3"></div>
 
       {/* Theme Switch */}
       <h2 className="text-2xl font-semibold">Choose Theme</h2>
-      <div className="w-64 sm:w-72">
+      <div className="w-full">
         <label
           htmlFor="light"
-          className="flex items-center justify-between gap-2 cursor-pointer py-2 px-4 hover:bg-third hover:dark:bg-dark-third rounded"
+          className="flex items-center justify-between gap-2 cursor-pointer py-2 px-4 hover:bg-third dark:hover:bg-dark-third rounded"
         >
           <span>Light</span>
           <input
@@ -76,7 +76,7 @@ const UserMenu = ({ setShowUserMenu }) => {
             id="light"
             value="light"
             onInput={() => dispatch({ type: "LIGHT" })}
-            defaultChecked={!theme}
+            defaultChecked={!darkTheme}
           />
         </label>
         <label
@@ -90,12 +90,12 @@ const UserMenu = ({ setShowUserMenu }) => {
             id="dark"
             value="dark"
             onInput={() => dispatch({ type: "DARK" })}
-            defaultChecked={theme}
+            defaultChecked={darkTheme}
           />
         </label>
       </div>
 
-      <div className="h-[1px] w-full bg-secondary dark:bg-dark-secondary my-3"></div>
+      <div className="h-[1px] w-full bg-secondary dark:bg-dark-third my-3"></div>
 
       {/* Actions */}
       <div>
@@ -103,7 +103,7 @@ const UserMenu = ({ setShowUserMenu }) => {
           <div
             key={option.title}
             onClick={option?.function}
-            className="flex items-center gap-3 justify-start p-2 cursor-pointer rounded-lg hover:bg-secondary dark:hover:bg-dark-secondary"
+            className="flex items-center gap-3 justify-start p-2 cursor-pointer rounded-lg hover:bg-secondary dark:hover:bg-dark-third"
           >
             <div className="circle small_circle">
               <i className={option.icon}></i>
