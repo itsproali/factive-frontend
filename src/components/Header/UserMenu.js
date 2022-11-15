@@ -13,8 +13,8 @@ const UserMenu = ({ setShowUserMenu }) => {
   });
 
   const handleLogOut = () => {
-    navigate("/login");
     dispatch({ type: "LOGOUT" });
+    navigate("/login");
   };
 
   // Data

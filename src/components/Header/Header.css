@@ -16,15 +16,22 @@
     background-color: var(--light-blue-color);
 }
 
-.profile_circle {
-    padding: 0;
-}
-
 .small_circle {
     background-color: var(--third);
     height: 2.25rem;
     width: 2.25rem;
     padding: .25rem;
+}
+
+.mini_circle {
+    background-color: var(--third);
+    height: 1.75rem;
+    width: 1.75rem;
+    padding: 0;
+}
+
+.profile_circle {
+    padding: 0;
 }
 
 .circle:hover {
