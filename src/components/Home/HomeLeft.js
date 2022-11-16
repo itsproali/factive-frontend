@@ -5,7 +5,7 @@ import { ArrowDown1 } from "../../svg";
 
 const HomeLeft = () => {
   const { user } = useSelector((state) => state);
-  const [showAll, setShowAll] = useState(false);
+  const [showAll, setShowAll] = useState(true);
 
   //   Data
   const homeLeftData = [
@@ -129,7 +129,7 @@ const HomeLeft = () => {
   ];
 
   return (
-    <div className="w-72 h-[89vh] pl-3 py-3 fixed top-14 left-0 overflow-y-auto scrollbar">
+    <div className="w-72 h-[89vh] pl-2 py-3 fixed top-14 left-0 overflow-y-auto scrollbar">
       <div className="flex items-center gap-2 cursor-pointer p-2 hover:bg-third hover:dark:bg-dark-third rounded-lg mb-2">
         <span>
           <img src={user.picture} alt="img" className="circle mini_circle" />
@@ -171,7 +171,7 @@ const HomeLeft = () => {
 
       <div className="">
         <div className="flex items-center justify-between">
-          <h4 className="text-color-primary dark:text-dark-color-primary text-lg font-semibold">
+          <h4 className="text-color-secondary dark:text-dark-color-secondary text-lg font-semibold">
             Your shortcuts
           </h4>
           <Link to="/" className="text-blue-color hover:underline">

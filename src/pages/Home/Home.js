@@ -1,6 +1,7 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
 import HomeLeft from "../../components/Home/HomeLeft";
+import HomeRight from "../../components/Home/HomeRight";
 // import { useSelector } from "react-redux";
 
 const Home = () => {
@@ -16,6 +17,7 @@ const Home = () => {
       <div className="min-h-screen pt-16">
         <div className="relative">
           <HomeLeft />
+          <HomeRight/>
         </div>
       </div>
     </>

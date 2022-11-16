@@ -19,6 +19,7 @@ module.exports = {
         "dark-color-primary": "#f0f2f5",
         "dark-color-secondary": "#b0b3b8",
         "blue-color": "#1876f2",
+        "medium-blue": "#263951",
         "green-color": "#42b72a",
         "light-blue-color": "#e7f3ff",
         "border-color": "#ccced2",
