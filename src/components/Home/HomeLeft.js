@@ -129,7 +129,7 @@ const HomeLeft = () => {
   ];
 
   return (
-    <div className="w-72 h-[89vh] pl-2 py-3 fixed top-14 left-0 overflow-y-auto scrollbar">
+    <div className="hidden lg:block w-72 h-[89vh] pl-2 py-3 fixed top-14 left-0 overflow-y-auto scrollbar">
       <div className="flex items-center gap-2 cursor-pointer p-2 hover:bg-third hover:dark:bg-dark-third rounded-lg mb-2">
         <span>
           <img src={user.picture} alt="img" className="circle mini_circle" />

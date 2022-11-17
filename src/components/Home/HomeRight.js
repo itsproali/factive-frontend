@@ -39,7 +39,7 @@ const HomeRight = () => {
     },
   ];
   return (
-    <div className="w-72 h-[89vh] pr-2 py-3 fixed top-14 right-0 overflow-y-auto scrollbar">
+    <div className="hidden md:block w-72 h-[89vh] pr-2 py-3 fixed top-14 right-0 overflow-y-auto scrollbar">
       <div className="flex items-center justify-between">
         <h4 className="text-color-secondary dark:text-dark-color-secondary text-lg font-semibold">
           Sponsored

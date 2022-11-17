@@ -98,7 +98,7 @@ const Header = () => {
             key={navigation.title}
             to={navigation.path}
             onClick={() => setActive(navigation.title)}
-            className={`px-6 lg:px-10 py-3 hover:bg-forth dark:hover:bg-dark-forth rounded transition-300 border-b-[3px] ${
+            className={`px-6 lg:px-10 py-3 hover:bg-third dark:hover:bg-dark-third rounded transition-300 border-b-[3px] ${
               active === navigation.title
                 ? "border-blue-color rounded-b-none"
                 : "border-transparent"
