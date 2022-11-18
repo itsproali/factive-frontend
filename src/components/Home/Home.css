@@ -39,8 +39,13 @@
 .create_post input {
     all: unset;
     display: block;
-    background-color: var(--third);
+    background-color: var(--secondary);
     padding: .5rem .75rem;
     border-radius: 9999px;
     width: 100%;
+    cursor: pointer;
+}
+
+.create_post input:hover {
+    background-color: var(--forth);
 }

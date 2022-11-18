@@ -21,20 +21,20 @@ const CreatePost = () => {
       </div>
 
       <div className="h-[1px] w-full bg-secondary dark:bg-dark-third my-3"></div>
-      <div className="grid grid-cols-3">
+      <div className="grid grid-cols-2 sm:grid-cols-3">
         <button className="flex items-center justify-center gap-2 py-2 rounded-lg hover:bg-third dark:hover:bg-dark-third">
           <LiveVideo color="#E42645" />
-          <span className="font-medium text-color-secondary">Live Video</span>
+          <span className="font-medium text-color-secondary text-sm">Live Video</span>
         </button>
 
         <button className="flex items-center justify-center gap-2 py-2 rounded-lg hover:bg-third dark:hover:bg-dark-third">
           <Photo color="#41B35D" />
-          <span className="font-medium text-color-secondary">Photo/video</span>
+          <span className="font-medium text-color-secondary text-sm">Photo/video</span>
         </button>
 
         <button className="flex items-center justify-center gap-2 py-2 rounded-lg hover:bg-third dark:hover:bg-dark-third">
           <Feeling color="#EAB026" />
-          <span className="font-medium text-color-secondary">
+          <span className="font-medium text-color-secondary text-sm">
             Feeling/activity
           </span>
         </button>

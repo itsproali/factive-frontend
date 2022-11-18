@@ -5,7 +5,7 @@ import { ArrowDown1 } from "../../svg";
 
 const HomeLeft = () => {
   const { user } = useSelector((state) => state);
-  const [showAll, setShowAll] = useState(true);
+  const [showAll, setShowAll] = useState(false);
 
   //   Data
   const homeLeftData = [

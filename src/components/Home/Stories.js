@@ -34,8 +34,8 @@ const Stories = () => {
   ];
 
   return (
-    <div className="bg-white dark:bg-dark-secondary p-4 rounded-xl relative shadow">
-      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-4 2xl:grid-cols-6 gap-x-2">
+    <div className="bg-white dark:bg-dark-secondary p-2 md:p-4 rounded-xl relative shadow">
+      <div className="grid grid-cols-4 sm:grid-cols-5 md:grid-cols-4 xl:grid-cols-5 2:grid-cols-6 gap-x-2">
         {/* Create Story */}
         <div
           className={`rounded-lg w-full h-44 bg-primary dark:bg-dark-primary shadow-lg relative overflow-hidden cursor-pointer`}
@@ -73,7 +73,7 @@ const Stories = () => {
       {storyIndex !== 0 && (
         <button
           onClick={() => setStoryIndex(storyIndex - 3)}
-          className="w-10 h-10 rounded-full bg-primary  flex items-center justify-center absolute top-[50%] translate-y-[-50%] -left-2 shadow-lg rotate-180"
+          className="w-10 h-10 rounded-full bg-primary  flex items-center justify-center absolute top-[50%] translate-y-[-50%] -left-1 shadow-lg rotate-180"
         >
           <ArrowRight />
         </button>
@@ -82,7 +82,7 @@ const Stories = () => {
       {stories.length > storyIndex + 3 && (
         <button
           onClick={() => setStoryIndex(storyIndex + 3)}
-          className="w-10 h-10 rounded-full bg-primary  flex items-center justify-center absolute top-[50%] translate-y-[-50%] -right-2 shadow-lg"
+          className="w-10 h-10 rounded-full bg-primary  flex items-center justify-center absolute top-[50%] translate-y-[-50%] -right-1 shadow-lg"
         >
           <ArrowRight />
         </button>
