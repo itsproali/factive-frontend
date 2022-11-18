@@ -8,14 +8,15 @@
   --primary: #ffff;
   --secondary: #f0f2f5;
   --third: #e4e6eb;
-  --forth: #f0f2f5;
+  --forth: #d2d5dd;
   --color-primary: #050505;
   --color-secondary: #65676b;
   --divider-color: #ced0d4;
   --dark-primary: #18191a;
   --dark-secondary: #242526;
   --dark-third: #3a3b3c;
-  --dark-color-primary: #242526;
+  --dark-forth: #4E4F50;
+  --dark-color-primary: #f0f2f5;
   --dark-color-secondary: #b0b3b8;
   --blue-color: #1876f2;
   --medium-blue: #263951;
@@ -87,6 +88,10 @@ input:-webkit-autofill:enabled {
 input[data-autocompleted] {
   background-color: transparent !important;
 }
+
+/* input[type=text] {
+  all: unset;
+} */
 
 /* -------- Scrollbar ------- */
 .scrollbar::-webkit-scrollbar {

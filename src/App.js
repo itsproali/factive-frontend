@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { Route, Routes, useLocation } from "react-router-dom";
-import Footer from "./components/Footer/Footer";
+// import Footer from "./components/Footer/Footer";
 import Header from "./components/Header/Header";
 import Loading from "./components/Loading/Loading";
 import "./dark.css";
@@ -12,7 +12,7 @@ import Login from "./pages/Login/Login";
 import Market from "./pages/Market/Market";
 import Profile from "./pages/Profile/Profile";
 import Watch from "./pages/Watch/Watch";
-import LoggedIn from "./utils/LoggedIn";
+import NotLoggedIn from "./utils/NotLoggedIn";
 import RequireAuth from "./utils/RequireAuth";
 
 function App() {
@@ -27,7 +27,7 @@ function App() {
       <div className="app">
         {isHidden || <Header />}
         <Routes>
-          <Route element={<LoggedIn />}>
+          <Route element={<NotLoggedIn />}>
             <Route path="/login" element={<Login />} />
           </Route>
           <Route element={<RequireAuth />}>
@@ -41,7 +41,7 @@ function App() {
             <Route path="/loading" element={<Loading />} />
           </Route>
         </Routes>
-        <Footer />
+        {/* <Footer /> */}
       </div>
     </div>
   );

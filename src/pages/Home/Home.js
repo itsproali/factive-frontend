@@ -1,24 +1,24 @@
 import React from "react";
 import { Helmet } from "react-helmet-async";
-import { useSelector } from "react-redux";
+import CreatePost from "../../components/Home/CreatePost";
+import HomeLeft from "../../components/Home/HomeLeft";
+import HomeRight from "../../components/Home/HomeRight";
+import Stories from "../../components/Home/Stories";
 
 const Home = () => {
-  const { id, first_name, last_name, username, picture } = useSelector(
-    (state) => state?.user
-  );
-
   return (
     <>
       <Helmet>
         <title>Factive - Home</title>
       </Helmet>
-      <div className="min-h-screen pt-16">
-        <div className="mb-12">
-          <h1 className="text-3xl">User Information</h1>
-          <h1>Id: {id}</h1>
-          <h1>{first_name + " " + last_name}</h1>
-          <h2>Username: {username}</h2>
-          <img src={picture} alt="profile" className="w-56" />
+      <div className="min-h-screen ">
+        <div className="relative grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <HomeLeft />
+          <div className="home_middle pt-16 sm:pt-20 mx-auto md:mx-10 lg:mx-[32vw] w-[97%] sm:w-[90%] md:w-[110%]">
+            <Stories />
+            <CreatePost />
+          </div>
+          <HomeRight />
         </div>
       </div>
     </>

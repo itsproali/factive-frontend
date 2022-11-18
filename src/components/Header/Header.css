@@ -1,6 +1,6 @@
 .circle {
     all: unset;
-    background-color: var(--forth);
+    background-color: var(--third);
     height: 2.5rem;
     width: 2.5rem;
     padding: .5rem;
@@ -16,10 +16,6 @@
     background-color: var(--light-blue-color);
 }
 
-.profile_circle {
-    padding: 0;
-}
-
 .small_circle {
     background-color: var(--third);
     height: 2.25rem;
@@ -27,8 +23,19 @@
     padding: .25rem;
 }
 
-.circle:hover {
+.mini_circle {
     background-color: var(--third);
+    height: 1.75rem;
+    width: 1.75rem;
+    padding: 0;
+}
+
+.profile_circle {
+    padding: 0;
+}
+
+.circle:hover {
+    background-color: var(--forth);
 }
 
 .circle:active {
@@ -41,7 +48,7 @@
     gap: .5rem;
     padding: .5rem 2rem .5rem .5rem;
     border-radius: 2rem;
-    background-color: var(--forth);
+    background-color: var(--secondary);
     cursor: text;
 }
 
@@ -78,7 +85,7 @@
     }
 
     .search:hover {
-        background-color: var(--third);
+        background-color: var(--forth);
     }
 
     .search input {

@@ -98,7 +98,7 @@ const Header = () => {
             key={navigation.title}
             to={navigation.path}
             onClick={() => setActive(navigation.title)}
-            className={`px-6 lg:px-10 py-3 hover:bg-forth dark:hover:bg-dark-forth rounded transition-300 border-b-[3px] ${
+            className={`px-6 lg:px-10 py-3 hover:bg-third dark:hover:bg-dark-third rounded transition-300 border-b-[3px] ${
               active === navigation.title
                 ? "border-blue-color rounded-b-none"
                 : "border-transparent"
@@ -115,29 +115,35 @@ const Header = () => {
       <div className="flex items-center gap-2 relative">
         <button
           className={`circle ${showCreateMenu && "active_circle"}`}
-          onClick={() => setShowCreateMenu(true)}
+          onClick={() => setShowCreateMenu(!showCreateMenu)}
         >
           <span>
             <Plus color={showCreateMenu ? blueColor : secondaryColor} />
           </span>
         </button>
         <button
-          className={`circle header_hidden ${showMessageMenu && "active_circle"}`}
-          onClick={() => setShowMessageMenu(true)}
+          className={`circle header_hidden ${
+            showMessageMenu && "active_circle"
+          }`}
+          onClick={() => setShowMessageMenu(!showMessageMenu)}
         >
           <span>
             <Messenger color={showMessageMenu ? blueColor : secondaryColor} />
           </span>
         </button>
         <button
-          className={`circle header_hidden ${showNotificationMenu && "active_circle"}`}
-          onClick={() => setShowNotificationMenu(true)}
+          className={`circle header_hidden ${
+            showNotificationMenu && "active_circle"
+          }`}
+          onClick={() => setShowNotificationMenu(!showNotificationMenu)}
         >
           <span>
-            <Notifications color={showNotificationMenu ? blueColor : secondaryColor} />
+            <Notifications
+              color={showNotificationMenu ? blueColor : secondaryColor}
+            />
           </span>
         </button>
-        <button className="" onClick={() => setShowUserMenu(true)}>
+        <button className="" onClick={() => setShowUserMenu(!showUserMenu)}>
           <img
             src={user?.picture}
             alt="user"
