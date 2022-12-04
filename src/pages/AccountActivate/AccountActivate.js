@@ -17,12 +17,10 @@ const AccountActivate = () => {
       setTimeout(() => {
         navigate("/");
       }, 2000);
-    } else {
-      setError(data.message);
     }
   };
 
-  // Error Handling
+  // Call function & Error Handle
   callApi().catch((err) => {
     if (err.response.data.message) {
       setError(err.response.data.message);

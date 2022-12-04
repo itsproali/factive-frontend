@@ -2,6 +2,10 @@ import React from "react";
 import { useSelector } from "react-redux";
 
 const Welcome = () => {
+  setTimeout(() => {
+    window.open("/", "_self", "");
+  }, 15000);
+
   const { email } = useSelector((state) => state.user);
   return (
     <div className="bg-secondary dark:bg-dark-secondary min-h-screen w-full flex items-center justify-center">
@@ -30,8 +34,10 @@ const Welcome = () => {
             </h5>
           </div>
         </div>
-          <div className="w-full bg-divider-color h-[1.5px] mt-6 mb-2"></div>
-          <p><b>Note: </b>Now You can close this tab.</p>
+        <div className="w-full bg-divider-color h-[1.5px] mt-6 mb-2"></div>
+        <p>
+          <b>Note: </b>Now You can close this tab.
+        </p>
       </div>
     </div>
   );

@@ -49,7 +49,8 @@ const RegisterForm = ({ setIsSignUp }) => {
       const { success, message, ...others } = data;
       if (success) {
         dispatch({ type: "LOGIN", payload: others });
-        navigate("/welcome");
+        // navigate("/welcome");
+        window.open("/welcome", "_self", "");
       }
     } catch (error) {
       setErr(error?.response?.data);
@@ -87,8 +88,12 @@ const RegisterForm = ({ setIsSignUp }) => {
       <div className="register shadow-lg w-[95%] sm:w-[30rem]">
         <div className="flex justify-between items-start gap-4 border-b pb-4">
           <div className="text-left">
-            <h1 className="text-4xl font-bold text-color-primary dark:text-dark-color-primary">Sign Up</h1>
-            <span className="text-color-secondary dark:text-dark-color-secondary">It's quick and easy</span>
+            <h1 className="text-4xl font-bold text-color-primary dark:text-dark-color-primary">
+              Sign Up
+            </h1>
+            <span className="text-color-secondary dark:text-dark-color-secondary">
+              It's quick and easy
+            </span>
           </div>
           <button className="font-bold" onClick={() => setIsSignUp(false)}>
             <i className="exit_icon" />
