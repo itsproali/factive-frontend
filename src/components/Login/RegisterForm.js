@@ -48,8 +48,8 @@ const RegisterForm = ({ setIsSignUp }) => {
       );
       const { success, message, ...others } = data;
       if (success) {
-        navigate("/");
         dispatch({ type: "LOGIN", payload: others });
+        navigate("/welcome");
       }
     } catch (error) {
       setErr(error?.response?.data);

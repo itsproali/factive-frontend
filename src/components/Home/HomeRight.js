@@ -7,23 +7,23 @@ const HomeRight = () => {
   const contacts = [
     {
       name: "Sheikh Sahariar Siam",
-      img: "https://scontent.fdac23-1.fna.fbcdn.net/v/t39.30808-6/315296879_2071632616558377_1170859680328228597_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeEHwuaLKDtMcsgx0Luz2D-1aCgJGMV64v1oKAkYxXri_buh3wgPFWuv8G-jfTSktrjkbJmvVhzmKK4jhhh2teI9&_nc_ohc=1UOAaH3AAZgAX_P6q5n&_nc_ht=scontent.fdac23-1.fna&oh=00_AfByuSxcirKP1Pw5XxItlW63UC4Q_9-GB7dkIQ6vgctxDw&oe=63799030",
+      img: "/stories/profile1.jpg",
     },
     {
       name: "Sk Saud Khan",
-      img: "https://scontent.fdac23-1.fna.fbcdn.net/v/t39.30808-6/313179538_532030232070033_4361168080159234641_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeG3HKrrxS9dBIhGB3rVWY4lmhn81i-UwKSaGfzWL5TApG7x6t8PPn1XhGKjkWhhjT3hKPE838snHsQURY0v3QPV&_nc_ohc=USLWOzXaLgoAX-uqHoy&tn=X0hBge_mtthrrRf7&_nc_ht=scontent.fdac23-1.fna&oh=00_AfCYjTz6pxBk_5P3p8wfh0NpwTD9x5Pp0H_mXZW8NMaulg&oe=6379DA84",
+      img: "/stories/profile2.jpg",
     },
     {
       name: "Abdur Rahman Tanoy",
-      img: "https://scontent.fdac23-1.fna.fbcdn.net/v/t39.30808-6/313179538_532030232070033_4361168080159234641_n.jpg?_nc_cat=104&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeG3HKrrxS9dBIhGB3rVWY4lmhn81i-UwKSaGfzWL5TApG7x6t8PPn1XhGKjkWhhjT3hKPE838snHsQURY0v3QPV&_nc_ohc=USLWOzXaLgoAX-uqHoy&tn=X0hBge_mtthrrRf7&_nc_ht=scontent.fdac23-1.fna&oh=00_AfCYjTz6pxBk_5P3p8wfh0NpwTD9x5Pp0H_mXZW8NMaulg&oe=6379DA84",
+      img: "/stories/profile3.png",
     },
     {
       name: "Akram Sakib",
-      img: "https://scontent.fdac23-1.fna.fbcdn.net/v/t39.30808-6/299192639_1727292417645551_1295120835020230048_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeHYdZVktjk9U5xsLXfUiwREN9m6GCSRvFw32boYJJG8XFQWP8KhAa2x-UnsCl5-DbUYb4PBVs8ZWn_MhP2vMzVg&_nc_ohc=rF2PawKg5yAAX_6e8om&_nc_ht=scontent.fdac23-1.fna&oh=00_AfA5K3lJYhuMF8fqjS-uVJMgkvy7DV9shugquTrs9TwNPA&oe=637A3427",
+      img: "/stories/profile4.jfif",
     },
     {
       name: "Nasimur Rahman",
-      img: "https://scontent.fdac23-1.fna.fbcdn.net/v/t39.30808-6/307761309_637118501112620_1934549091684210998_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=09cbfe&_nc_eui2=AeFdQ4XgnjN45IUHi2xUyDmblY2MO1ZhO7CVjYw7VmE7sAQzpnIwv4IGrgsBdQgRuPDnm6xnx6fx9sHBLM7a7F-s&_nc_ohc=19SS073dyEQAX8mZfep&_nc_ht=scontent.fdac23-1.fna&oh=00_AfBzjMmhHdrtJP60d2easRagGV6YNiAbMxjkJXbs8rvsPA&oe=637A5FA7",
+      img: "/stories/profile5.png",
     },
     {
       name: "Riaz Ahmed Akhanda",
