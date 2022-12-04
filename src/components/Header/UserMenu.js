@@ -15,6 +15,7 @@ const UserMenu = ({ setShowUserMenu }) => {
   const handleLogOut = () => {
     dispatch({ type: "LOGOUT" });
     navigate("/login");
+    window.location.reload();
   };
 
   // Data

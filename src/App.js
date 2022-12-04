@@ -5,6 +5,7 @@ import Header from "./components/Header/Header";
 import Loading from "./components/Loading/Loading";
 import "./dark.css";
 import AccountActivate from "./pages/AccountActivate/AccountActivate";
+import Welcome from "./pages/AccountActivate/Welcome";
 import Friends from "./pages/Friends/Friends";
 import Gaming from "./pages/Gaming/Gaming";
 import Home from "./pages/Home/Home";
@@ -18,7 +19,9 @@ import RequireAuth from "./utils/RequireAuth";
 function App() {
   // Make Header visible or not
   const location = useLocation();
-  const isHidden = ["/login", "/activate"].includes(location.pathname);
+  const isHidden = ["/login", "/activate", "/welcome"].includes(
+    location.pathname
+  );
 
   // Theme
   const darkTheme = useSelector((state) => state.darkTheme);
@@ -32,7 +35,7 @@ function App() {
           </Route>
           <Route element={<RequireAuth />}>
             <Route path="/" element={<Home />} />
-            <Route path="/activate/:token" element={<AccountActivate />} />
+            <Route path="/activate" element={<AccountActivate />} />
             <Route path="/profile" element={<Profile />} />
             <Route path="/friends" element={<Friends />} />
             <Route path="/watch" element={<Watch />} />
@@ -40,6 +43,7 @@ function App() {
             <Route path="/gaming" element={<Gaming />} />
             <Route path="/loading" element={<Loading />} />
           </Route>
+          <Route path="/welcome" element={<Welcome />} />
         </Routes>
         {/* <Footer /> */}
       </div>

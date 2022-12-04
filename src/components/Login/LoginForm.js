@@ -33,10 +33,8 @@ const LoginForm = ({ setIsSignUp }) => {
       if (success) {
         navigate("/");
         dispatch({ type: "LOGIN", payload: others });
-        
       }
     } catch (error) {
-      console.log(error?.response?.data?.message);
       setErr(error?.response?.data);
     }
     setLoading(false);
@@ -47,7 +45,7 @@ const LoginForm = ({ setIsSignUp }) => {
   }
 
   return (
-    <div className="p-6 bg-primary dark:bg-dark-primary shadow-lg rounded-xl w-full sm:w-96">
+    <div className="p-2 sm:p-6 bg-primary dark:bg-dark-primary shadow-lg rounded-xl w-full sm:w-96">
       {/* Formik Form */}
       <Formik
         initialValues={{

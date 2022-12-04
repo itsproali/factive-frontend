@@ -24,7 +24,7 @@ const Login = () => {
             Factive helps you to connect and share with the people in your life
           </h2>
         </div>
-        <div className="w-[90%] sm:w-auto mx-auto">
+        <div className="w-[95%] sm:w-auto mx-auto">
           {/* Login Form */}
           <LoginForm setIsSignUp={setIsSignUp} />
           {/* Register Form */}
