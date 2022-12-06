@@ -9,6 +9,11 @@ const userReducer = (state = initialState, action) => {
     case "LOGIN":
       Cookies.set("user", JSON.stringify(action.payload));
       return action.payload;
+
+    case "VERIFY":
+      state.verified = true;
+      Cookies.set("user", JSON.stringify(state));
+      return state;
     case "LOGOUT":
       Cookies.remove("user");
       return {};

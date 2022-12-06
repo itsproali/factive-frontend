@@ -1,34 +1,47 @@
 import axios from "axios";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
+import Loading from "../../components/Loading/Loading";
 
 const AccountActivate = () => {
   const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(true);
   const token = window.location.search.split("=")[1];
   const navigate = useNavigate();
+  const dispatch = useDispatch();
 
   // Request to the server
   const callApi = async () => {
-    const { data } = await axios.post(
-      `${process.env.REACT_APP_SERVER}/activate`,
-      { token }
-    );
-    if (data.success) {
-      setTimeout(() => {
-        navigate("/");
-      }, 2000);
+    try {
+      const { data } = await axios.post(
+        `${process.env.REACT_APP_SERVER}/activate`,
+        { token }
+      );
+      if (data.success) {
+        setTimeout(() => {
+          navigate("/");
+          dispatch({type: "VERIFY"})
+        }, 4000);
+      }
+    } catch (err) {
+      if (err.response.data.message) {
+        setError(err.response.data.message);
+      } else {
+        setError(err.message);
+      }
     }
+    setLoading(false);
   };
 
   // Call function & Error Handle
-  callApi().catch((err) => {
-    if (err.response.data.message) {
-      setError(err.response.data.message);
-    } else {
-      setError(err.message);
-    }
-  });
-
+  useEffect(() => {
+    callApi();
+  }, []);
+  
+  if (loading) {
+    return <Loading />;
+  }
   return (
     <div className="bg-secondary dark:bg-dark-secondary min-h-screen w-full flex items-center justify-center">
       <div className="w-[95%] sm:w-3/4 bg-white dark:bg-dark-third rounded-lg shadow-lg p-4 sm:p-8 md:p-16">

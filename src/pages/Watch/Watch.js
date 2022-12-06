@@ -7,7 +7,7 @@ const Watch = () => {
       <Helmet>
         <title>Factive - Watch</title>
       </Helmet>
-      <div className="min-h-screen pt-20">Let's Watch some Video</div>
+      <div className="min-h-screen pt-16">Let's Watch some Video</div>
     </>
   );
 };
